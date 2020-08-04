@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RingProgress">
+        <attr name="title" format="string"/>
+        <attr name="num" format="string"/>
+        <attr name="unit" format="string"/>
+        <attr name="titleSize" format="dimension"/>
+        <attr name="numSize" format="dimension"/>
+        <attr name="unitSize" format="dimension"/>
+        <attr name="titleColor" format="color|reference"/>
+        <attr name="numColor" format="color|reference"/>
+        <attr name="unitColor" format="color|reference"/>
+        <attr name="ringWidth" format="dimension"/>
+        <attr name="radius" format="dimension"/>
+        <attr name="circleColor" format="color|reference"/>
+        <attr name="ringColor" format="color|reference"/>
+        <attr name="endCircleRadius" format="dimension"/>
+        <attr name="endCircleColor" format="color|reference"/>
+        <attr name="edgeDistance" format="dimension"/>
+    </declare-styleable>
+</resources>
