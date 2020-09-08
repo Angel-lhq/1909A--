@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="#EEDEDE"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/shape_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:text="用户名"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:text="赣州"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tv_name"
+            android:drawableLeft="@drawable/ic_outline_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_below="@id/tv_location"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/img1"
+                android:scaleType="centerCrop"
+                android:layout_margin="5dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"/>
+            <ImageView
+                android:id="@+id/img2"
+                android:scaleType="centerCrop"
+                android:layout_margin="5dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_follow"
+            android:text="+关注"
+            android:layout_margin="20sp"
+            android:background="@drawable/shape_txt_border"
+            android:textColor="#f44336"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="3dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_head"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

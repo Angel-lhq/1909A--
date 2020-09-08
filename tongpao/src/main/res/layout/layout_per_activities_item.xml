@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:padding="5dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_title"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_margin="5dp"
+        android:scaleType="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_overornot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_over_bg"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="2dp"
+        android:text="已结束"
+        app:layout_constraintLeft_toRightOf="@id/img_title"
+        app:layout_constraintTop_toTopOf="@id/img_title" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintLeft_toRightOf="@+id/tv_overornot"
+        app:layout_constraintTop_toTopOf="@id/img_title" />
+    <LinearLayout
+        android:id="@+id/linear_community"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toRightOf="@id/img_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_overornot">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:gravity="center"
+        android:drawableLeft="@drawable/ic_outline_watch_later_24"
+        app:layout_constraintBottom_toTopOf="@+id/tv_location"
+        app:layout_constraintStart_toEndOf="@+id/img_title" />
+
+    <TextView
+        android:id="@+id/tv_apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/tv_time"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_member"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:drawableLeft="@mipmap/rc_icon_rt_message_left"
+        app:layout_constraintBottom_toBottomOf="@+id/img_title"
+        app:layout_constraintLeft_toRightOf="@id/img_title" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#94666666"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.youth.banner.Banner
+            android:id="@+id/home_banner"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <LinearLayout
+            android:id="@+id/linea_lead"
+            app:layout_constraintTop_toBottomOf="@id/home_banner"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_topic"
+                android:text="话题"
+                android:gravity="center"
+                android:textColor="#222"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_optimization"
+                android:text="优选"
+                android:gravity="center"
+                android:textColor="#222"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_preferential"
+                android:text="特惠"
+                android:gravity="center"
+                android:textColor="#222"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_sign"
+                android:text="签到"
+                android:gravity="center"
+                android:textColor="#222"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view1"
+            app:layout_constraintTop_toBottomOf="@id/linea_lead"
+            android:layout_width="match_parent"
+            android:background="#94666666"
+            android:layout_height="1dp"/>
+
+        <RelativeLayout
+            app:layout_constraintTop_toBottomOf="@id/view1"
+            android:id="@+id/rel_advertisement"
+            android:padding="7dp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/img_advertisement"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_advertisement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.sunfusheng.marqueeview.MarqueeView
+                android:id="@+id/marqueeView"
+                android:layout_toRightOf="@id/img_advertisement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                app:mvAnimDuration="1000"
+                app:mvDirection="bottom_to_top"
+                app:mvInterval="3000"
+                app:mvTextColor="@color/crop__selector_pressed"
+                app:mvTextSize="14sp"
+                app:mvSingleLine="true"/>
+
+            <TextView
+                android:id="@+id/tv_advertisement_detail"
+                android:text="详情"
+                android:textColor="#2AB795"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="8dp"
+                android:background="@drawable/shape_ad_bg"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:visibility="visible"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/rel_advertisement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons_manufacturer"
+            android:layout_marginTop="13sp"
+            app:layout_constraintTop_toBottomOf="@id/recyclerView"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_manufacturer"
+                android:text="品牌制造商直供"
+                android:textSize="17sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="13sp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="更多推荐"
+                app:layout_constraintRight_toLeftOf="@id/img_manufacturer_more"
+                app:layout_constraintTop_toTopOf="@id/txt_manufacturer"
+                app:layout_constraintBottom_toBottomOf="@id/txt_manufacturer"
+                android:layout_marginRight="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/img_manufacturer_more"
+                android:src="@drawable/ic_more"
+                app:layout_constraintTop_toTopOf="@id/txt_manufacturer"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcl_manufacturer"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="20dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/txt_manufacturer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons_seckill"
+            android:layout_marginTop="13sp"
+            app:layout_constraintTop_toBottomOf="@id/cons_manufacturer"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_seckill"
+                android:text="秒杀专场"
+                android:textSize="17sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="13sp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txt_next"
+                android:text="下一场18：00开始"
+                android:layout_marginTop="2dp"
+                app:layout_constraintLeft_toLeftOf="@id/txt_seckill"
+                app:layout_constraintTop_toBottomOf="@id/txt_seckill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txt_time_left"
+                android:text="本场结束剩余"
+                app:layout_constraintTop_toTopOf="@id/txt_seckill"
+                app:layout_constraintRight_toRightOf="@id/linea_time"
+                app:layout_constraintLeft_toLeftOf="@id/linea_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:id="@+id/linea_time"
+                app:layout_constraintTop_toBottomOf="@id/txt_time_left"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginRight="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_time_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/shape_time_bg"
+                    android:text="12"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:text=":"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_time_minute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="12"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/shape_time_bg"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:text=":"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_time_second"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/shape_time_bg"
+                    android:textColor="@color/white"
+                    android:text="13"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcl_seckill"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="20dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/txt_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons_fresh"
+            app:layout_constraintTop_toBottomOf="@id/cons_seckill"
+            android:layout_marginTop="13sp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_fresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新鲜好物"
+                android:textSize="17sp"
+                android:layout_marginTop="13sp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:text="更多推荐"
+                app:layout_constraintRight_toLeftOf="@id/img_fresh_more"
+                app:layout_constraintTop_toTopOf="@id/txt_fresh"
+                app:layout_constraintBottom_toBottomOf="@id/txt_fresh"
+                android:layout_marginRight="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/img_fresh_more"
+                android:src="@drawable/ic_more"
+                app:layout_constraintTop_toTopOf="@id/txt_fresh"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcl_fresh"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="20dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/txt_fresh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons_recommend"
+            app:layout_constraintTop_toBottomOf="@id/cons_fresh"
+            android:layout_marginTop="13sp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="人气推荐"
+                android:textSize="17sp"
+                android:layout_marginTop="13sp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:text="更多推荐"
+                app:layout_constraintRight_toLeftOf="@id/img_recommend_more"
+                app:layout_constraintTop_toTopOf="@id/txt_recommend"
+                app:layout_constraintBottom_toBottomOf="@id/txt_recommend"
+                android:layout_marginRight="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/img_recommend_more"
+                android:src="@drawable/ic_more"
+                app:layout_constraintTop_toTopOf="@id/txt_recommend"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcl_recommend"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="20dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/txt_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons_special"
+            app:layout_constraintTop_toBottomOf="@id/cons_fresh"
+            android:layout_marginTop="13sp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_special"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="专题精选"
+                android:textSize="17sp"
+                android:layout_marginTop="13sp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:text="更多推荐"
+                app:layout_constraintRight_toLeftOf="@id/img_special_more"
+                app:layout_constraintTop_toTopOf="@id/txt_special"
+                app:layout_constraintBottom_toBottomOf="@id/txt_special"
+                android:layout_marginRight="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/img_special_more"
+                android:src="@drawable/ic_more"
+                app:layout_constraintTop_toTopOf="@id/txt_special"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcl_special"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingTop="10dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/txt_special"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons_guess"
+            app:layout_constraintTop_toBottomOf="@id/cons_special"
+            android:layout_marginTop="13sp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_guess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="猜你喜欢"
+                android:textSize="17sp"
+                android:layout_marginTop="13sp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcl_guess"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="20dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/txt_guess"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

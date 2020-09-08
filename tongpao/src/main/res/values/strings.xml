@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">同袍</string>
+    <string name="title_home">主页</string>
+    <string name="title_discover">发现</string>
+    <string name="title_shop">商城</string>
+    <string name="title_my_own">我的</string>
+</resources>

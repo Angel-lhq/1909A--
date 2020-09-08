@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.activity.ActivitiesDetailActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/img_head_bg"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="pin"/>
+            <include layout="@layout/layout_toolbar_userdetail"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_overornot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/ic_over_bg"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="2dp"
+                    android:text="已结束"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintTop_toTopOf="@id/tv_overornot"
+                    app:layout_constraintLeft_toRightOf="@id/tv_overornot"/>
+
+
+                <LinearLayout
+                    android:id="@+id/linear_community"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_overornot">
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_activity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已报名："
+                    android:padding="2dp"
+                    app:layout_constraintTop_toBottomOf="@id/linear_community"
+                    app:layout_constraintLeft_toLeftOf="@id/linear_community"/>
+                <TextView
+                    android:id="@+id/tv_last"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="剩余名额："
+                    android:padding="2dp"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/linear_community"
+                    app:layout_constraintLeft_toRightOf="@id/tv_activity"/>
+
+                <TextView
+                    android:id="@+id/txt_follow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:textSize="12sp"
+                    android:text="+关注"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toTopOf="@id/linear_community"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:background="@drawable/selector_follow_bg"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/colorTopicBg1"/>
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:text="免费"
+                    android:textColor="@color/colorTopicBg1"
+                    android:textSize="30dp"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_activity"
+                    app:layout_constraintTop_toBottomOf="@id/tv_activity" />
+
+                <TextView
+                    android:id="@+id/tv_activity_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="活动时间："
+                    android:textSize="15dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingTop="2dp"
+                    android:drawableLeft="@drawable/ic_outline_watch_red"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+                <TextView
+                    android:id="@+id/tv_apply_end_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="报名截止："
+                    android:textSize="15dp"
+                    android:textColor="@color/cardview_shadow_start_color"
+                    android:gravity="center_vertical"
+                    android:paddingTop="2dp"
+                    android:paddingLeft="25dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_activity_time" />
+
+                <TextView
+                    android:id="@+id/tv_des"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="活动地点："
+                    android:textSize="15dp"
+                    android:gravity="center_vertical"
+                    android:paddingTop="2dp"
+                    android:drawableRight="@mipmap/more_1x"
+                    android:drawableLeft="@drawable/ic_outline_location"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_apply_end_time" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:background="@color/cardview_shadow_start_color"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_head"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="20dp"
+                    android:background="@mipmap/ic_launcher"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/tv_host"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="主办方：同袍官方社团"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="15dp"
+                    app:layout_constraintLeft_toRightOf="@id/img_head"
+                    app:layout_constraintTop_toTopOf="@id/img_head"/>
+
+                <TextView
+                    android:id="@+id/tv_leading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="负责人：吉恩熙"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center_vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_phone"
+                    app:layout_constraintLeft_toRightOf="@id/img_head"
+                    app:layout_constraintTop_toBottomOf="@id/tv_host" />
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系电话：15101080686"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="15dp"
+                    app:layout_constraintBottom_toBottomOf="@id/img_head"
+                    app:layout_constraintLeft_toRightOf="@id/img_head" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:background="@color/cardview_shadow_start_color"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_apply_title"
+                    android:text="报名人员"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:id="@+id/tv_apply_count"
+                    android:text="已报名"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@mipmap/more_1x"
+                    android:textSize="15dp"
+                    android:gravity="center_vertical"
+                    app:layout_constraintTop_toBottomOf="@id/tv_apply_title"
+                    app:layout_constraintRight_toRightOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:background="@color/cardview_shadow_start_color"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <WebView
+                android:id="@+id/web_detail"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#ffffff"
+        app:layout_behavior=".common.TestTitleBehavior">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_back_black"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="55dp"
+            android:text="活动详情"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/img_shared"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/icon_omit"
+            android:layout_centerVertical="true"
+            android:rotation="90"/>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

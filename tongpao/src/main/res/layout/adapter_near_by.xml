@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_near_head"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_near_nickName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="1322"
+        android:textColor="#000"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@id/img_near_head"
+        app:layout_constraintTop_toTopOf="@id/img_near_head" />
+
+    <TextView
+        android:id="@+id/tv_near_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_activity_roommate"
+        android:drawableLeft="@mipmap/female"
+        android:paddingLeft="10dp"
+        android:paddingTop="2dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="2dp"
+        app:layout_constraintLeft_toRightOf="@id/img_near_head"
+        app:layout_constraintTop_toBottomOf="@id/tv_near_nickName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@mipmap/icon_map_annotation"
+        app:layout_constraintLeft_toRightOf="@+id/img_near_head"
+        app:layout_constraintTop_toBottomOf="@id/tv_near_sex" />
+
+    <TextView
+        android:id="@+id/tv_near_m"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/tv_near_sex"
+        android:layout_marginLeft="70dp"
+        android:gravity="center"
+        android:text="333"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_near_sex" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

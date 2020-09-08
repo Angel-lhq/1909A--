@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/iv_home_selector"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_classify"
+        android:icon="@drawable/iv_classify_selector"
+        android:title="@string/title_classify" />
+
+    <item
+        android:id="@+id/navigation_special"
+        android:icon="@drawable/iv_special_selector"
+        android:title="@string/title_special" />
+
+    <item
+        android:id="@+id/navigation_own"
+        android:icon="@drawable/iv_own_selector"
+        android:title="@string/title_own" />
+
+</menu>

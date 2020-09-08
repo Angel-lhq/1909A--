@@ -11,8 +11,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/day01_8_1_homework" />
-            <option value="$PROJECT_DIR$/day02_8_2_1_homework" />
+            <option value="$PROJECT_DIR$/firstkotlin" />
+            <option value="$PROJECT_DIR$/mallshop" />
+            <option value="$PROJECT_DIR$/tongpao" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

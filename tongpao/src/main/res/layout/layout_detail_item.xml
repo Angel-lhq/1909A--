@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_head"
+        android:layout_width="@dimen/head_w"
+        android:layout_height="@dimen/head_h"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@mipmap/ic_launcher_round"/>
+
+    <TextView
+        android:id="@+id/txt_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="话题"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintTop_toTopOf="@id/img_head"
+        app:layout_constraintLeft_toRightOf="@id/img_head"/>
+
+    <TextView
+        android:id="@+id/txt_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="4天前"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/img_head"
+        app:layout_constraintLeft_toRightOf="@id/img_head"/>
+
+    <ImageView
+        android:id="@+id/img_level"
+        android:layout_width="25dp"
+        android:layout_height="10dp"
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="5dp"
+        android:src="@mipmap/lv6"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_username"
+        app:layout_constraintStart_toEndOf="@+id/txt_username"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_follow"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:textSize="12sp"
+        android:text="+关注"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/selector_follow_bg"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="@color/colorTopicBg1"/>
+
+    <TextView
+        android:id="@+id/txt_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="内容描述"
+        app:layout_constraintTop_toBottomOf="@id/img_head"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_imgs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_des" />
+
+    <com.example.tongpao.myview.CustomAvaterView
+        android:id="@+id/customAvater"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_imgs" />
+    <TextView
+        android:id="@+id/tv_detail_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/customAvater"
+        app:layout_constraintRight_toRightOf="@id/customAvater"
+        app:layout_constraintTop_toTopOf="@id/customAvater"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

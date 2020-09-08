@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/view"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/cardview_shadow_start_color"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <TextView
+        android:id="@+id/txt_community"
+        android:drawableLeft="@mipmap/icon_join_club_message"
+        android:drawablePadding="10dp"
+        android:text="我的社团"
+        android:textSize="15sp"
+        android:textColor="#222222"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_manage"
+        android:text="社团管理>"
+        app:layout_constraintTop_toTopOf="@+id/txt_community"
+        app:layout_constraintBottom_toBottomOf="@id/txt_community"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcl_community"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/view1"
+        app:layout_constraintTop_toBottomOf="@id/txt_community"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/txt_community"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/view1"
+        android:layout_margin="20sp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_community"
+            android:text="你还没有加入社团？"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_join"
+            android:text="立即加入"
+            android:autoLink="all"
+            android:textColor="#f44336"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/view1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/cardview_shadow_start_color"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
