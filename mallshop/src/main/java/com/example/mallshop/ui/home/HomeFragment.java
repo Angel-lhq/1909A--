@@ -17,7 +17,6 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.mallshop.R;
 import com.example.mallshop.adapter.GridHelperAdapter;
 import com.example.mallshop.adapter.LinearAdapter;
-import com.example.mallshop.adapter.RVAdapter;
 import com.example.mallshop.base.BaseFragment;
 import com.example.mallshop.bean.home.ContentBean;
 import com.example.mallshop.constract.home.IHome;
@@ -54,6 +53,7 @@ public class HomeFragment extends BaseFragment<IHome.IHomeContentPresenter> impl
 
     private ArrayList<Integer> imgSrc = new ArrayList<>();
     private TimeThread timeThread;
+    private GridHelperAdapter gridHelperAdapter;
 
     @Override
     protected IHome.IHomeContentPresenter initPresenter() {
@@ -68,12 +68,13 @@ public class HomeFragment extends BaseFragment<IHome.IHomeContentPresenter> impl
     @Override
     protected void initView(View view) {
         VirtualLayoutManager layoutManager = new VirtualLayoutManager(context);
+        mRecyclerView.setLayoutManager(layoutManager);
         //开始
         DelegateAdapter delegateAdapter = new DelegateAdapter(layoutManager, false);
         mRecyclerView.setAdapter(delegateAdapter);
 
-        LinearLayoutHelper linearHelper = new LinearLayoutHelper(5);
-        delegateAdapter.addAdapter(new RVAdapter(context, linearHelper));
+//        LinearLayoutHelper linearHelper = new LinearLayoutHelper(5);
+//        delegateAdapter.addAdapter(new RVAdapter(context, linearHelper));
 
         //item_1
         GridLayoutHelper gridHelper = new GridLayoutHelper(5);
@@ -88,7 +89,9 @@ public class HomeFragment extends BaseFragment<IHome.IHomeContentPresenter> impl
         //自动填充满布局，在设置完权重，若没有占满，自动填充满布局
         gridHelper.setAutoExpand(true);
         initGridData();
-        delegateAdapter.addAdapter(new GridHelperAdapter(imgSrc, gridHelper));
+        gridHelperAdapter = new GridHelperAdapter(imgSrc, gridHelper,context);
+        gridHelperAdapter.notifyDataSetChanged();
+        delegateAdapter.addAdapter(gridHelperAdapter);
         //item_1
         //Linear 布局
         LinearLayoutHelper linearHelper1 = new LinearLayoutHelper(5);
@@ -124,7 +127,7 @@ public class HomeFragment extends BaseFragment<IHome.IHomeContentPresenter> impl
                 if (second == 60) {
                     tvSecond.setText("00");
                 }
-                if (minute == 0 && second == 0) {
+                if (minute == 60 && second == 60) {
                     tvHour.setText("01");
                     tvMinute.setText("00");
                     tvSecond.setText("00");

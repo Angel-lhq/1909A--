@@ -20,7 +20,7 @@ public class RVAdapter extends DelegateAdapter.Adapter<RecyclerView.ViewHolder> 
     private VirtualLayoutManager.LayoutParams mLayoutParams;
 
     public RVAdapter(Context context, LayoutHelper mHelper) {
-        this(context, mHelper, new VirtualLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 300));
+        this(context, mHelper, new VirtualLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
     }
 
     public RVAdapter(Context context, LayoutHelper layoutHelper, @NonNull VirtualLayoutManager.LayoutParams layoutParams) {

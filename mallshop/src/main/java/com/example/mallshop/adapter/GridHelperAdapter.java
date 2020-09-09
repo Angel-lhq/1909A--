@@ -1,5 +1,6 @@
 package com.example.mallshop.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,12 @@ public class GridHelperAdapter extends DelegateAdapter.Adapter<RecyclerView.View
 
     private LayoutHelper mHelper;
     private List<Integer> mData;
+    private Context context;
 
-    public GridHelperAdapter(List<Integer> mData, LayoutHelper helper) {
+    public GridHelperAdapter(List<Integer> mData, LayoutHelper helper,Context context) {
         this.mData = mData;
         this.mHelper = helper;
+        this.context=context;
     }
 
     @Override
@@ -30,7 +33,7 @@ public class GridHelperAdapter extends DelegateAdapter.Adapter<RecyclerView.View
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
+        View view = LayoutInflater.from(context)
                 .inflate(R.layout.item_grid_layout, parent, false);
         return new RecyclerViewItemHolder(view);
     }
